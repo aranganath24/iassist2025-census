@@ -1,23 +1,83 @@
 ---
-title: 'Introduction'
+title: 'The decennial Census with tidycensus'
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- How do you import decennial Census data into R Studio using *tidycensus*?
+- How do you process, query, wrangle, and visualize decennial Census data once it is imported into R Studio? 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Explain how to use *tidycensus* to import decennial Census data at various geographic scales, and various temporal periods, into your R Studio environment. 
+- Process and query decennial Census data to explore simple questions, using the *dplyr* package 
+- Visualize decennial Census data using the *ggplot2* and *tmap packages
+- Export decennial Census datasets and visualizations from your R Studio environment to a local directory in various file formats. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
+
+```{r, message=FALSE, warning=FALSE}
+library(tidycensus)
+library(tmap)
+library(tidyverse)
+```
+
+```{r, echo=F, message=FALSE, warning=FALSE}
+library(kableExtra)
+library(here)
+```
+
+## Retrieving decennial Census data
+
+```{r, eval=FALSE}
+# loads variable table for 2010 decennial census and assigns it to object named
+# "decennial_variables_2010"
+ decennial_variables_2010<-load_variables(2010, "sf1")
+```
+
+```{r, echo=FALSE, message=FALSE}
+decennial_variables_2010 <- read_csv("data/decennial_variables_2010.csv")
+```
+
+```{r}
+# prints "decennial_variables_2010"
+decennial_variables_2010
+```
+
+```{r, eval=F}
+# brings up "decennial_variables_2010" in data Viewer
+View(decennial_variables_2010)
+```
+
+
+```{r, echo=FALSE}
+decennial_variables_2010 %>%
+  head(40) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  row_spec(0, background = "#333", color = "white") %>%  # Fix header
+  scroll_box(height = "300px", width = "100%")
+```
+
+
+
+
+## Cleaning and processing decennial Census datasets
+
+## Visualizing decennial Census data with *ggplot2*
+
+## Mapping decennial Census data with *tmap*
+
+## Working with multiple Census datasets
+
+## Exporting decennial Census datasets and analysis products from R Studio
+
 
 This is a lesson created via The Carpentries Workbench. It is written in
 [Pandoc-flavored Markdown][pandoc] for static files (with extension `.md`) and

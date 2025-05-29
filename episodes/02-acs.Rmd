@@ -1,5 +1,5 @@
 ---
-title: 'Introduction'
+title: 'The American Community Survey with tidycensus'
 teaching: 10
 exercises: 2
 ---
