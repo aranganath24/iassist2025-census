@@ -1213,9 +1213,8 @@
       "LazyLoad": "Yes",
       "Author": "Thomas Lumley [aut, cre], Ken Knoblauch [ctb], Scott Waichler [ctb], Achim Zeileis [ctb]",
       "Maintainer": "Thomas Lumley <tlumley@u.washington.edu>",
-      "Repository": "RSPM",
-      "NeedsCompilation": "no",
-      "Encoding": "UTF-8"
+      "Repository": "CRAN",
+      "NeedsCompilation": "no"
     },
     "digest": {
       "Package": "digest",
@@ -4793,7 +4792,7 @@
       "NeedsCompilation": "no",
       "Author": "Kyle Walker [aut, cre], Matt Herman [aut], Kris Eberwein [ctb]",
       "Maintainer": "Kyle Walker <kyle@walker-data.com>",
-      "Repository": "RSPM"
+      "Repository": "CRAN"
     },
     "tidyr": {
       "Package": "tidyr",
